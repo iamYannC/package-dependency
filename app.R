@@ -6,7 +6,7 @@ library(tidygraph)
 library(ggraph)
 library(DT)
 
-# --- Logic Layer remains the same ---
+# --- Table ---
 get_dep_edges <- function(pkg, deps, flip = FALSE) {
   if (flip) { tmp <- pkg; pkg <- deps; deps <- tmp }
   if (is.null(pkg) || is.null(deps) || pkg == "" || deps == "" || pkg == deps) return(NULL)
@@ -106,3 +106,4 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
+
